@@ -1,0 +1,21 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Level of pain</th>
+            <th>Hospital</th>
+            <th>Avg Processing Time</th>
+            <th>Patients at Waiting List</th>
+            <th>Waiting Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let hospital of hospitalsWithProcessingTime">
+          <td>{{hospital.waitingList[0].levelOfPain}}</td>                    
+            <td>{{hospital.name}}</td>
+            <td>{{hospital.waitingList[0].averageProcessTime}}</td>   
+            <td>{{hospital.waitingList[0].patientCount}}</td>   
+            <td>{{hospital.procssingTime}}</td>
+        </tr>
+    </tbody>
+</table>
+

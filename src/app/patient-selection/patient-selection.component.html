@@ -1,0 +1,18 @@
+<h3>
+  Patient Details 
+</h3>
+<p>Illnes Selected:<input class="form-control" type="text" [(ngModel)]="ilnessSelected" readonly></p>
+<p>Enter Patient Name:<input class="form-control" type="text" [(ngModel)]="patientName" required></p>
+<p>Select Severity Level</p>
+ <select class="form-control" id="power"
+        required
+        [(ngModel)]="selectedSverity" name="power"
+        #power="ngModel" (change)='onOptionsSelected($event)'>
+  <option *ngFor="let symbol of sevrerityValues;let i = index" [value]="i">{{symbol}}</option>
+ 
+</select> 
+<button type="button" class="btn btn-primary" (click)="addPatient()"  [disabled]="patientName===''">Add Patient Detils</button>
+<div *ngIf="selectedSverity !== ''">
+<app-hospital-finder [selectedSeverity] ="selectedSverity"></app-hospital-finder>
+</div>
+
